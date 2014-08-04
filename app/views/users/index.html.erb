@@ -1,0 +1,21 @@
+<%= form_tag users_path, method: :get do %>
+    <%= search_field_tag :q, params[:q], size: 100 %>
+    <%= submit_tag 'Filter' %>
+<% end  %>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
